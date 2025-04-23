@@ -1,4 +1,10 @@
 @import "tailwindcss";
+body{
+  color: white;
+  border-color: white;
+  background-color: black;
+  height: 2000px;
+}
 
 button{
   cursor: pointer;

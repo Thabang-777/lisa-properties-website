@@ -1,15 +1,29 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
-import './index.css'
-import Navbar from './components/Navbar'
+import { 
+  Route ,
+  createBrowserRouter, 
+  createRoutesFromElements,
+  RouterProvider
+ } from 'react-router-dom'
+
+import MainLayout from './layouts/MainLayout'
+import HomePage from './pages/HomePage'
+import ServicesPage from './pages/ServicesPage'
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  const router = createBrowserRouter(
+    createRoutesFromElements(
+      <Route path='/' element={<MainLayout/>}>
+        <Route index element={<HomePage />}/>
+        <Route path="/services" element={<ServicesPage />}/>
+      </Route>
+    )
+  )
   return (
     <>
-      <Navbar />
+      <RouterProvider router={router}/>
     </>
   )
 }
