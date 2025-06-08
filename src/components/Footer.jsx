@@ -12,10 +12,10 @@ const Footer = () => {
         <div>
           <h3 className='text-lg text-gray-800 mb-4'>Newsletter</h3>
           <p className='text-gray-500 mb-4'>
-            Be the first to hear about new products, exclusive events, and online offers.
+            Be the first to hear about new listings, exclusive events, and online offers.
           </p>
           <p className='font-medium text-sm text-gray-600 mb-6'>
-            Sign up and get 10% off your first order
+            Sign up and get access to our free newsletter today.
           </p>
 
           <form className='flex'>
@@ -30,19 +30,19 @@ const Footer = () => {
         </div>
         
         <div>
-          <h3 className='text-lg text-gray-800 mb-4'>Shop</h3>
+          <h3 className='text-lg text-gray-800 mb-4'>Browse</h3>
           <ul className='sace-y-2 text-gray-600'>
             <li>
-              <Link to='#' className='hover:text-gray-500 transition-colors'>Men's Top war</Link>
+              <Link to='#' className='hover:text-gray-500 transition-colors'>Sales</Link>
             </li>
             <li>
-              <Link to='#' className='hover:text-gray-500 transition-colors'>Women's Top war</Link>
+              <Link to='#' className='hover:text-gray-500 transition-colors'>Rentals</Link>
             </li>
             <li>
-              <Link to='#' className='hover:text-gray-500 transition-colors'>Men's Bottom war</Link>
+              <Link to='#' className='hover:text-gray-500 transition-colors'>Auctions</Link>
             </li>  
             <li>
-              <Link to='#' className='hover:text-gray-500 transition-colors'>Men's Bottom war</Link>
+              <Link to='#' className='hover:text-gray-500 transition-colors'>Show houses</Link>
             </li>
           </ul>
         </div>
@@ -101,7 +101,7 @@ const Footer = () => {
       </div>
       <div className='container mx-auto mt-12 px-4 lg:px-0 border-t border-gray-200 pt-6'>
         <p className='text-gray-500 text-sm tracking-tighter text-center'>
-          2025, compileTab. All Rights Reserved
+          2025, LisaPropertiesGroup. All Rights Reserved
         </p>
       </div>
     </footer>
