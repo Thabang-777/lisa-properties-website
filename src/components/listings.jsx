@@ -1,5 +1,5 @@
 import React from 'react'
-import propData from '../../public/data.js'
+// import propData from '../../public/data.js'
 
 const Listings = () => {
   const propertyData = propData;
