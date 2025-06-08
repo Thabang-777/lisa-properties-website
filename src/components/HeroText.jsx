@@ -2,7 +2,7 @@ import React from 'react'
 
 const HeroText = () => {
   return (
-    <div className='container mx-auto my-auto z-0 flex flex-col items-center absolute top-1/2 left-1/2 transform -translate-x-2/4 -translate-y-5/4 lg:-translate-y-6/4'>
+    <div className='container mx-auto my-auto z-0 flex flex-col items-center absolute top-1/2 left-1/2 transform -translate-x-2/4 -translate-y-5/4 md:-translate-y-9/10 lg:-translate-y-6/4 xl:-translate-y-7/4'>
       <h1 className='text-lg font-bold mb-6'>Find your Dream Home!</h1>
       <div className='w-full'>
         <div className='flex justify-center w-full'>
