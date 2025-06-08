@@ -7,8 +7,7 @@ const HomePage = () => {
   return (
     <>
       <Hero />
-      <HeroText />
-      <Listings />
+      {/* <Listings /> */}
     </>
   )
 }

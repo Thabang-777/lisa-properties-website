@@ -12,3 +12,7 @@ button{
 .image{
   cursor: pointer;
 }
+select:focus{
+  background-color: black;
+  color: white;
+}

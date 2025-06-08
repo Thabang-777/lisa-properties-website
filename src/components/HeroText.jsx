@@ -2,13 +2,13 @@ import React from 'react'
 
 const HeroText = () => {
   return (
-    <div className='z-0 flex flex-col items-center relative mt-25'>
-      <h1 className='text-3xl font-bold mb-10'>Find your Dream Home!</h1>
-      <div className='w-286'>
-        <div>
-          <input className='border-2 h-14 w-1/1 pl-10 placeholder:font-bold' placeholder='Search for a City, Suburb or Web reference'></input>
+    <div className='container mx-auto my-auto z-0 flex flex-col items-center absolute top-1/2 left-1/2 transform -translate-x-2/4 -translate-y-5/4 lg:-translate-y-6/4'>
+      <h1 className='text-lg font-bold mb-6'>Find your Dream Home!</h1>
+      <div className='w-full'>
+        <div className='flex justify-center w-full'>
+          <input className='border-2 py-2 w-4/5 pl-10 placeholder:font-bold' placeholder='Search for a City, Suburb or Web reference'></input>
         </div>
-        <div className='grid grid-cols-6 w-1/1 gap-2 mt-5'>
+        <div className='grid grid-cols-6 w-4/5 container mx-auto gap-2 mt-5'>
           <select type='' className='border-2 p-2 font-bold' placeholder='Property Type'>
             <option hidden disabled selected value="">Type</option>
             <option>House</option>
