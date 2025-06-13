@@ -1,8 +1,8 @@
 import React from 'react'
-// import propData from '../../public/data.js'
+import properties from '../../public/data';
 
 const Listings = () => {
-  const propertyData = propData;
+  const propertyData = properties;
   
   return (
     <div className='w-1/1 relative bottom-10 flex flex-col justify-center'>
