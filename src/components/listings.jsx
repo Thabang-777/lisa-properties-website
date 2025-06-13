@@ -1,5 +1,5 @@
 import React from 'react'
-import properties from '../../public/data';
+import properties from '../data.js'
 
 const Listings = () => {
   const propertyData = properties;
