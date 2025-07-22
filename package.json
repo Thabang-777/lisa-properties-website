@@ -1,5 +1,6 @@
 {
   "name": "lisa-properties-website",
+  "homepage": "https://lisaproperties.co.za",
   "private": true,
   "version": "0.0.0",
   "type": "module",
