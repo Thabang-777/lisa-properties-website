@@ -1,0 +1,17 @@
+@import "tailwindcss";
+body{
+  color: white;
+  border-color: white;
+  background-color: black;
+}
+
+button{
+  cursor: pointer;
+}
+.image{
+  cursor: pointer;
+}
+select:focus{
+  background-color: black;
+  color: white;
+}
