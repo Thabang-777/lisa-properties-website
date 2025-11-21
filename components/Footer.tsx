@@ -21,7 +21,7 @@ export default function Footer() {
             <h4 className="text-gold font-semibold mb-4">Contact Info</h4>
             <div className="space-y-2 text-gray-300 text-sm">
               <p>📍 Johannesburg South, South Africa</p>
-              <p>📧 lisa_properties@outlook.com</p>
+              <p>📧 info@lisaproperties.com</p>
               <p>📱 +27 84 012 7473</p>
               <div className="flex space-x-4 mt-4">
                 <a href="https://www.instagram.com/mahlatselisa" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-gold transition-colors duration-300">📸</a>

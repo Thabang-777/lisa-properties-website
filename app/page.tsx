@@ -88,7 +88,7 @@ export default function Home() {
               <h3 className="text-2xl font-bold text-charcoal mb-6">Get In Touch</h3>
               <div className="space-y-4 text-gray-700">
                 <p className="flex items-start"><span className="mr-3 text-2xl">📍</span><span>Johannesburg South, South Africa</span></p>
-                <p className="flex items-start"><span className="mr-3 text-2xl">📧</span><a href="mailto:lisa_properties@outlook.com" className="hover:text-gold transition-colors">lisa_properties@outlook.com</a></p>
+                <p className="flex items-start"><span className="mr-3 text-2xl">📧</span><a href="mailto:info@lisaproperties.com" className="hover:text-gold transition-colors">info@lisaproperties.com</a></p>
                 <p className="flex items-start"><span className="mr-3 text-2xl">📱</span><a href="tel:+27840127473" className="hover:text-gold transition-colors">+27 84 012 7473</a></p>
               </div>
             </motion.div>

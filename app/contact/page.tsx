@@ -28,7 +28,7 @@ export default function ContactPage() {
             </div>
             {[
               { icon: '📍', title: 'Location', value: 'Johannesburg South, South Africa' },
-              { icon: '📧', title: 'Email', value: 'lisa_properties@outlook.com', link: 'mailto:lisa_properties@outlook.com' },
+              { icon: '📧', title: 'Email', value: 'info@lisaproperties.com', link: 'mailto:info@lisaproperties.com' },
               { icon: '📱', title: 'Phone', value: '+27 84 012 7473', link: 'tel:+27840127473' },
               { icon: '🌐', title: 'Website', value: 'www.lisaproperties.co.za', link: 'https://www.lisaproperties.co.za' },
             ].map((item, index) => (
