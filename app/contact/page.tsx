@@ -1,14 +1,37 @@
 'use client';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
+import emailjs from '@emailjs/browser';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({ name: '', email: '', phone: '', message: '' });
+  const [loading, setLoading] = useState(false);
+  const [sent, setSent] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  // Initialize EmailJS (replace YOUR_SERVICE_ID, YOUR_TEMPLATE_ID, YOUR_PUBLIC_KEY)
+  emailjs.init('7SCGs3lNgI3asCmz-');
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    alert("Thank you, we'll be in touch soon!");
-    setFormData({ name: '', email: '', phone: '', message: '' });
+    setLoading(true);
+
+    try {
+      await emailjs.send('service_voekfdw', 'template_eeekymg', {
+        from_name: formData.name,
+        from_email: formData.email,
+        phone: formData.phone,
+        message: formData.message,
+      });
+
+      setSent(true);
+      setFormData({ name: '', email: '', phone: '', message: '' });
+      setTimeout(() => setSent(false), 5000);
+    } catch (error) {
+      alert('Failed to send message. Please try again.');
+      console.error(error);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -58,7 +81,10 @@ export default function ContactPage() {
                 <label htmlFor="message" className="block text-gray-700 font-medium mb-2">Message</label>
                 <textarea id="message" value={formData.message} onChange={(e) => setFormData({ ...formData, message: e.target.value })} required rows={6} className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold focus:border-transparent transition-all" />
               </div>
-              <button type="submit" className="w-full bg-gold text-white py-4 rounded-full font-semibold hover:bg-opacity-90 transition-all duration-300 hover:scale-105">Send Message</button>
+              {sent && <p className="text-green-600 font-semibold mb-4 text-center">Message sent successfully! 🎉</p>}
+              <button type="submit" disabled={loading} className="w-full bg-gold text-white py-4 rounded-full font-semibold hover:bg-opacity-90 transition-all duration-300 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed">
+                {loading ? 'Sending...' : 'Send Message'}
+              </button>
             </form>
           </motion.div>
         </div>
