@@ -2,6 +2,6 @@
   "/page": "app/page.js",
   "/admin/listings/create/page": "app/admin/listings/create/page.js",
   "/admin/auth/login/page": "app/admin/auth/login/page.js",
-  "/admin/dashboard/page": "app/admin/dashboard/page.js",
-  "/admin/auth/register/page": "app/admin/auth/register/page.js"
+  "/admin/auth/register/page": "app/admin/auth/register/page.js",
+  "/admin/dashboard/page": "app/admin/dashboard/page.js"
 }
