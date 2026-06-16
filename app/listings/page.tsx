@@ -1,15 +1,34 @@
 'use client';
 import { motion } from 'framer-motion';
 import PropertyCard from '@/components/PropertyCard';
-import { listings } from '@/data/listings';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { apiClient } from '@/lib/apiClient';
 
 export default function ListingsPage() {
   const [sortBy, setSortBy] = useState('date');
   const [filterBedrooms, setFilterBedrooms] = useState('all');
+  const [listings, setListings] = useState<any[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchListings = async () => {
+      try {
+        const res = await apiClient.getListings({ status: 'available', limit: 100 });
+        setListings(res.listings || []);
+      } catch (error) {
+        console.error('Failed to fetch listings:', error);
+        // Fallback to empty array if API fails
+        setListings([]);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchListings();
+  }, []);
 
   let filteredListings = [...listings];
-  if (filterBedrooms !== 'all') filteredListings = filteredListings.filter((l) => l.bedrooms === filterBedrooms);
+  if (filterBedrooms !== 'all') filteredListings = filteredListings.filter((l) => l.bedrooms === parseInt(filterBedrooms));
   if (sortBy === 'price-asc') filteredListings.sort((a, b) => parseInt(a.price.replace(/[^0-9]/g, '')) - parseInt(b.price.replace(/[^0-9]/g, '')));
   else if (sortBy === 'price-desc') filteredListings.sort((a, b) => parseInt(b.price.replace(/[^0-9]/g, '')) - parseInt(a.price.replace(/[^0-9]/g, '')));
 

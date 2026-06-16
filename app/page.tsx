@@ -3,11 +3,29 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import PropertyCard from '@/components/PropertyCard';
-import { listings } from '@/data/listings';
-import { useState } from 'react';
+import { apiClient } from '@/lib/apiClient';
+import { useState, useEffect } from 'react';
 
 export default function Home() {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [listings, setListings] = useState<any[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchListings = async () => {
+      try {
+        const res = await apiClient.getListings({ status: 'available', limit: 3 });
+        setListings(res.listings || []);
+      } catch (error) {
+        console.error('Failed to fetch listings:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchListings();
+  }, []);
+
   const featuredListings = listings.slice(0, 3);
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -88,7 +106,7 @@ export default function Home() {
               <h3 className="text-2xl font-bold text-charcoal mb-6">Get In Touch</h3>
               <div className="space-y-4 text-gray-700">
                 <p className="flex items-start"><span className="mr-3 text-2xl">📍</span><span>Johannesburg South, South Africa</span></p>
-                <p className="flex items-start"><span className="mr-3 text-2xl">📧</span><a href="mailto:info@lisaproperties.com" className="hover:text-gold transition-colors">info@lisaproperties.com</a></p>
+                <p className="flex items-start"><span className="mr-3 text-2xl">📧</span><a href="mailto:info@lisaproperties.co.za" className="hover:text-gold transition-colors">info@lisaproperties.co.za</a></p>
                 <p className="flex items-start"><span className="mr-3 text-2xl">📱</span><a href="tel:+27840127473" className="hover:text-gold transition-colors">+27 84 012 7473</a></p>
               </div>
             </motion.div>

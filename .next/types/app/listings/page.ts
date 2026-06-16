@@ -1,4 +1,4 @@
-// File: C:\Users\thaba\Desktop\Career\CODE\Websites\lisa-properties-website\app\listings\page.tsx
+// File: C:\Users\thaba\Desktop\lisa-properties-website\app\listings\page.tsx
 import * as entry from '../../../../app/listings/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

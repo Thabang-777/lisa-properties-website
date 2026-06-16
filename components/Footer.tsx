@@ -21,7 +21,7 @@ export default function Footer() {
             <h4 className="text-gold font-semibold mb-4">Contact Info</h4>
             <div className="space-y-2 text-gray-300 text-sm">
               <p>📍 Johannesburg South, South Africa</p>
-              <p>📧 info@lisaproperties.com</p>
+              <p>📧 info@lisaproperties.co.za</p>
               <p>📱 +27 84 012 7473</p>
               <div className="flex space-x-4 mt-4">
                 <a href="https://www.instagram.com/mahlatselisa" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-gold transition-colors duration-300">📸</a>
@@ -32,7 +32,12 @@ export default function Footer() {
           </div>
         </div>
         <div className="mt-8 pt-8 border-t border-gray-700 text-center text-gray-400 text-sm">
-          <p>&copy; {new Date().getFullYear()} Lisa Properties (Pty) Ltd. All rights reserved.</p>
+          <div className="flex items-center justify-center gap-2">
+            <p>&copy; {new Date().getFullYear()} Lisa Properties (Pty) Ltd. All rights reserved.</p>
+            <Link href="/admin/auth/login" className="text-gray-600 hover:text-gold transition-colors text-xs opacity-30 hover:opacity-100 hover:underline">
+              admin
+            </Link>
+          </div>
         </div>
       </div>
     </footer>
